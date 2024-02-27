@@ -3,63 +3,64 @@ package lab1buteelt;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class TaskManager<T> {
-    private LinkedList<T> taskList = new LinkedList<>();
+public class TaskManager {
+    private static LinkedList<String> taskList = new LinkedList<>();
 
-    public void addTask(T task) {
+    public static void addTask(String task) {
         taskList.add(task);
-        System.out.println("Нэмэгдсэн ажил: " + task);
+        System.out.println("Task added: " + task);
     }
 
-    public void removeTask(T task) {
+    public static void removeTask(String task) {
         if (taskList.remove(task)) {
-            System.out.println("ажлыг хаслаа: " + task);
+            System.out.println("Task removed: " + task);
         } else {
-            System.out.println("ажил олдсонгүй: " + task);
+            System.out.println("Task not found: " + task);
         }
     }
 
-    
-    public void displayTasks() {
+    /**
+     * 
+     */
+    public static void displayTasks() {
         if (taskList.isEmpty()) {
-            System.out.println("ажил байхгүй байна.");
+            System.out.println("No tasks available.");
         } else {
-            System.out.println("ажлууд:");
-            for (T task : taskList) {
+            System.out.println("Tasks:");
+            for (String task : taskList) {
                 System.out.println("- " + task);
             }
         }
     }
 
-    public void markTaskAsCompleted(T task) {
+    public static void markTaskAsCompleted(String task) {
         if (taskList.contains(task)) {
-            System.out.println("ажлыг дуусгаснаар тэмдэглэлээ: " + task);
+            System.out.println("Task marked as completed: " + task);
         } else {
-            System.out.println("ажил олдсонгүй: " + task);
+            System.out.println("Task not found: " + task);
         }
     }
 
-    public int getTaskCount() {
+    public static int getTaskCount() {
         return taskList.size();
     }
 
-    public void clearAllTasks() {
+    public static void clearAllTasks() {
         taskList.clear();
-        System.out.println("бүх ажлуудыг устгалаа");
+        System.out.println("All tasks cleared.");
     }
 
     public static void main(String[] args) {
-        TaskManager<String> circle = new TaskManager<>();
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("\nСонголтын дугаарыг оруулна уу:");
+            System.out.println("\nTask Manager Menu:");
             System.out.println("1. ажил нэмэх");
             System.out.println("2. ажил хасах");
-            System.out.println("3. хүлээгдэж буй ажлуудыг харуулах");
-            System.out.println("4. ажлыг хийснээр тооцох");
-            System.out.println("5. ажлын тоог харуулах");
-            System.out.println("6. ажлуудыг устгах");
+            System.out.println("3. ажлуудыг харуулах");
+            System.out.println("4. ажлуудыг хийснээр тооцох");
+            System.out.println("5. ажлын тоог харах");
+            System.out.println("6. бүх ажлыг устгах");
             System.out.println("0. гарах");
 
             System.out.print("Enter your choice: ");
@@ -70,26 +71,26 @@ public class TaskManager<T> {
                 case 1:
                     System.out.print("Enter task to add: ");
                     String taskToAdd = scanner.nextLine();
-                    circle.addTask(taskToAdd);
+                    addTask(taskToAdd);
                     break;
                 case 2:
                     System.out.print("Enter task to remove: ");
                     String taskToRemove = scanner.nextLine();
-                    circle.removeTask(taskToRemove);
+                    removeTask(taskToRemove);
                     break;
                 case 3:
-                    circle.displayTasks();
+                    displayTasks();
                     break;
                 case 4:
                     System.out.print("Enter task to mark as completed: ");
                     String taskToMark = scanner.nextLine();
-                    circle.markTaskAsCompleted(taskToMark);
+                    markTaskAsCompleted(taskToMark);
                     break;
                 case 5:
-                    System.out.println("Task count: " + circle.getTaskCount());
+                    System.out.println("Task count: " + getTaskCount());
                     break;
                 case 6:
-                    circle.clearAllTasks();
+                    clearAllTasks();
                     break;
                 case 0:
                     System.out.println("Exiting Task Manager. Goodbye!");
