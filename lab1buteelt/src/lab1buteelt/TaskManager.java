@@ -13,7 +13,7 @@ public class TaskManager<T> {
 
     public void removeTask(T task) {
         if (taskList.remove(task)) {
-            System.out.println("ажлыг хаслаа: " + task);
+            System.out.println("ажлыг хаслааaa: " + task);
         } else {
             System.out.println("ажил олдсонгүй: " + task);
         }

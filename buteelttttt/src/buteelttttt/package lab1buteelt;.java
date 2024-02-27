@@ -3,6 +3,7 @@ package buteelttttt;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+
 public class TaskManager<T> {
     private LinkedList<T> taskList = new LinkedList<>();
 
@@ -13,7 +14,7 @@ public class TaskManager<T> {
 
     public void removeTask(T task) {
         if (taskList.remove(task)) {
-            System.out.println("ажлыг хаслааaa iyy: " + task);
+            System.out.println("ажлыг хаслааaa: " + task);
         } else {
             System.out.println("ажил олдсонгүй: " + task);
         }
@@ -62,7 +63,7 @@ public class TaskManager<T> {
             System.out.println("6. ажлуудыг устгах");
             System.out.println("0. гарах");
 
-            System.out.print("Сонголтоо оруулна уу: ");
+            System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume the newline character
 
