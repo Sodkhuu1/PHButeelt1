@@ -3,6 +3,7 @@ package lab1buteelt;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+
 public class TaskManager<T> {
     private LinkedList<T> taskList = new LinkedList<>();
 
