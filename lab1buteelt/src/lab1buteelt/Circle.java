@@ -55,13 +55,13 @@ public class TaskManager {
 
         while (true) {
             System.out.println("\nTask Manager Menu:");
-            System.out.println("1. Add Task");
-            System.out.println("2. Remove Task");
-            System.out.println("3. Display Tasks");
-            System.out.println("4. Mark Task as Completed");
-            System.out.println("5. Get Task Count");
-            System.out.println("6. Clear All Tasks");
-            System.out.println("0. Exit");
+            System.out.println("1. ажил нэмэх");
+            System.out.println("2. ажил хасах");
+            System.out.println("3. ажлуудыг харуулах");
+            System.out.println("4. ажлуудыг хийснээр тооцох");
+            System.out.println("5. ажлын тоог харах");
+            System.out.println("6. бүх ажлыг устгах");
+            System.out.println("0. гарах");
 
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
