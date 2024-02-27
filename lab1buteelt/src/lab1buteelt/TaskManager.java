@@ -68,12 +68,12 @@ public class TaskManager<T> {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter task to add: ");
+                    System.out.print("нэмэх ажлаа оруулна уу: ");
                     String taskToAdd = scanner.nextLine();
                     circle.addTask(taskToAdd);
                     break;
                 case 2:
-                    System.out.print("Enter task to remove: ");
+                    System.out.print("хасах ажлаа оруулна уу ");
                     String taskToRemove = scanner.nextLine();
                     circle.removeTask(taskToRemove);
                     break;
@@ -81,22 +81,22 @@ public class TaskManager<T> {
                     circle.displayTasks();
                     break;
                 case 4:
-                    System.out.print("Enter task to mark as completed: ");
+                    System.out.print("гүйцэтгэсэн ажлаа оруул: ");
                     String taskToMark = scanner.nextLine();
                     circle.markTaskAsCompleted(taskToMark);
                     break;
                 case 5:
-                    System.out.println("Task count: " + circle.getTaskCount());
+                    System.out.println("ажлын тоо: " + circle.getTaskCount());
                     break;
                 case 6:
                     circle.clearAllTasks();
                     break;
                 case 0:
-                    System.out.println("Exiting Task Manager. Goodbye!");
+                    System.out.println(" баяртай!");
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.out.println("0-6 оруулна уу.");
             }
         }
     }
