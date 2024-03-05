@@ -62,6 +62,7 @@ public class TaskManager {
             System.out.println("5. ажлын тоог харах");
             System.out.println("6. бүх ажлыг устгах");
             System.out.println("0. гарах");
+            System.out.println("09:02");
 
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
